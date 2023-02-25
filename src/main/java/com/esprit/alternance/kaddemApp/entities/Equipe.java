@@ -1,10 +1,19 @@
 package com.esprit.alternance.kaddemApp.entities;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Equipe implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,7 +24,7 @@ public class Equipe implements Serializable {
     private String nomEquipe;
     @ManyToMany(mappedBy = "equipe",cascade = CascadeType.ALL)
     private Set<Etudiant> etudiant;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private DetailEquipe detEquipe;
 
 }

@@ -24,8 +24,13 @@ public class EquipeServiceImpl implements EquipeService {
     }
 
     @Override
-    public Equipe updateEquipe(Equipe equipe) {
-        return equipeRepository.save(equipe);
+    public Equipe updateEquipe(Equipe equipe, Integer equipeId) {
+        Equipe equipe1 = equipeRepository.findById(equipeId).get();
+        equipe1.setNomEquipe(equipe.getNomEquipe());
+        equipe1.setNiveau(equipe.getNiveau());
+        equipe1.setDetEquipe(equipe.getDetEquipe());
+
+        return equipeRepository.save(equipe1);
     }
 
     @Override
@@ -34,7 +39,9 @@ public class EquipeServiceImpl implements EquipeService {
     }
 
     @Override
-    public void deleteEquipe(Equipe equipe) {
-        equipeRepository.delete(equipe);
+    public void deleteEquipe(Integer equipeId) {
+        equipeRepository.deleteById(equipeId);
     }
+
+
 }

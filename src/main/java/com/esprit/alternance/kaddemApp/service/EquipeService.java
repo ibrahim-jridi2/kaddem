@@ -9,9 +9,9 @@ public interface EquipeService {
 
     Equipe addEquipe(Equipe e);
 
-    Equipe updateEquipe (Equipe e);
+    Equipe updateEquipe (Equipe e,Integer equipeId);
 
     Equipe retrieveEquipe (Integer idEquipe);
 
-    void deleteEquipe(Equipe equipe);
+    void deleteEquipe(Integer equipeId);
 }
