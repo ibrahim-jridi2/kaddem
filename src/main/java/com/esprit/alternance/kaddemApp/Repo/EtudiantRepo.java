@@ -11,6 +11,9 @@ public interface EtudiantRepo extends JpaRepository<Etudiant,Integer> {
      List<Etudiant> FindByEquipesIdEquipeAndEtudiantNiveauSenior();
     List<Etudiant> findByEquipesNiveau(Niveau nv);
     //Récupérer les étudiants d’un département donné
-    List<Etudiant> findByDepartementIdDeparatement(Integer departementId);
+    List<Etudiant> findEtudiantByDepartmentIdDepartment(Integer departmentId);
+
+    Etudiant findEtudiantByIdEtudiant(Integer idEtudiant);
 }
+
 
