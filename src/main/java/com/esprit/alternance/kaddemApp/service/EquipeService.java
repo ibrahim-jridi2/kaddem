@@ -14,4 +14,9 @@ public interface EquipeService {
     Equipe retrieveEquipe (Integer idEquipe);
 
     void deleteEquipe(Integer equipeId);
+
+
+
+
+    Equipe retrieveEquipeById (Integer idEquipe);
 }

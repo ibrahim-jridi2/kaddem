@@ -13,11 +13,11 @@ public class DepartementController {
     DepartementService departmentService;
     private final DepartementRepo departmentRepository;
 
-    @PutMapping("/asign-etudiant/{idEtudiant}/to-department/{idDepartement}")
-    public void asignEtudiantADepartment(@PathVariable("idEtudiant") Integer idEtudiant,
+    @PutMapping("/assign-etudiant/{idEtudiant}/to-department/{idDepartement}")
+    public void assignEtudiantADepartment(@PathVariable("idEtudiant") Integer idEtudiant,
             @PathVariable("idDepartement") Integer idDepartement
     ){
-        departmentService.asignEtudiantADepartment(idEtudiant,idDepartement);
+        departmentService.assignEtudiantADepartment(idEtudiant,idDepartement);
     }
     @PostMapping("/add-departement")
     public Departement addDepartment(@RequestBody Departement department){

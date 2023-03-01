@@ -14,9 +14,9 @@ public class DepartementServiceImpl implements DepartementService {
     EtudiantRepo etudiantRepository;
     DepartementRepo departmentRepository;
     @Override
-    public void asignEtudiantADepartment( Integer idEtudiant,Integer idDepartement) {
-        Departement department = departmentRepository.findDepartmentByIdDepartment(idDepartement);
-        Etudiant etudiant = etudiantRepository.findEtudiantByIdEtudiant(idEtudiant);
+    public void assignEtudiantADepartment(Integer idEtudiant, Integer idDepartement) {
+        Departement department = departmentRepository.findById(idDepartement).get();
+        Etudiant etudiant = etudiantRepository.findById(idEtudiant).get();
         if(department != null && etudiant != null){
             etudiant.setDepartement(department);
             etudiantRepository.save(etudiant);

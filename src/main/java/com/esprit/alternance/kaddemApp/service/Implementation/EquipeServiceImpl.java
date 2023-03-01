@@ -43,5 +43,10 @@ public class EquipeServiceImpl implements EquipeService {
         equipeRepository.deleteById(equipeId);
     }
 
+    @Override
+    public Equipe retrieveEquipeById(Integer idEquipe) {
+        return null;
+    }
+
 
 }
