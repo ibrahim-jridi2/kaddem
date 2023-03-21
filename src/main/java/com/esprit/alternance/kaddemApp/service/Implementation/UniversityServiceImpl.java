@@ -1,11 +1,13 @@
 package com.esprit.alternance.kaddemApp.service.Implementation;
 
 import com.esprit.alternance.kaddemApp.Repo.UniversityRepo;
+import com.esprit.alternance.kaddemApp.entities.Departement;
 import com.esprit.alternance.kaddemApp.entities.Universite;
 import com.esprit.alternance.kaddemApp.service.UniversityService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @AllArgsConstructor
@@ -43,5 +45,15 @@ public class UniversityServiceImpl implements UniversityService {
     @Override
     public void deleteUniversite(Integer UniversiteId) {
         universityRepository.deleteById(UniversiteId);
+    }
+
+    @Override
+    public List<Departement> retrieveDepartementsByUniversite(Integer idUniversite) {
+        List<Departement> list= universityRepository.findDepartementsByIdUniversity(idUniversite);
+        return list;
+    }
+    @Override
+    public float getChiffreAffaireEntreDeuxDate(Date startDate, Date endDate) {
+        return 0;
     }
 }

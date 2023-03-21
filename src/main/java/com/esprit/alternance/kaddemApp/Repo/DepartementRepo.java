@@ -5,4 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface DepartementRepo extends JpaRepository<Departement,Integer> {
     Departement findDepartementByIdDepartement(Integer idDepartement);
+
 }

@@ -17,7 +17,7 @@ public class Universite implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idUniversite",nullable=false)
-    private Integer id; // Clé primaire
+    private Integer idUniversity; // Clé primaire
     private String nomUniversite;
 
     @OneToMany(cascade = CascadeType.ALL)
