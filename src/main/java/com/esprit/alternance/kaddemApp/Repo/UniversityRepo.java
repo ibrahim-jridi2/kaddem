@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface UniversityRepo extends JpaRepository<Universite,Integer> {
     List<Departement> findDepartementsByIdUniversity(Integer idUniversity);
-    Universite findByIdUniversite(Integer idUniversite);
+    Universite findByIdUniversity(Integer idUniversite);
 }

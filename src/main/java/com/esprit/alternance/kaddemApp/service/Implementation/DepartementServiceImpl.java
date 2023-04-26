@@ -30,7 +30,7 @@ public class DepartementServiceImpl implements DepartementService {
     }
     @Override
     public Set<Departement> retrieveDepartementsByUniversite(Integer idUniversite) {
-        Universite universite = universiteRepository.findByIdUniversite(idUniversite);
+        Universite universite = universiteRepository.findByIdUniversity(idUniversite);
         if(universite == null)
             return null;
 

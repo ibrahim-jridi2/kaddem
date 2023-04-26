@@ -20,7 +20,7 @@ public class EquipeController {
         List<Equipe> listEquipes = equipeService.retrieveAllEquipes();
         return listEquipes;
     }
-    @Operation(description = "Retrieve all products")
+    @Operation(description = "add products")
     @PostMapping("/addEquipe")
     public Equipe addEquipe(@RequestBody Equipe equipe){
 
@@ -35,4 +35,5 @@ public class EquipeController {
     public Equipe updateEquipe(Equipe equipe,@PathVariable Integer equipeId){
         return equipeService.updateEquipe(equipe,equipeId);
     }
+
 }

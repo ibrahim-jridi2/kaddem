@@ -4,12 +4,16 @@ import com.esprit.alternance.kaddemApp.Repo.EquipeRepo;
 import com.esprit.alternance.kaddemApp.entities.Equipe;
 import com.esprit.alternance.kaddemApp.service.EquipeService;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @AllArgsConstructor
 @Service
+@Aspect
+@Slf4j
 public class EquipeServiceImpl implements EquipeService {
     EquipeRepo equipeRepository;
 
@@ -48,5 +52,8 @@ public class EquipeServiceImpl implements EquipeService {
         return null;
     }
 
-
+    @After("execution(* com.esprit.alternance.kaddemApp.service.Implementation.*.*(..))")
+    public void Test(){
+        log.info("this log will appear after the execution of services");
+    }
 }
